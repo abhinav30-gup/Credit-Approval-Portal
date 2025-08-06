@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for Credit</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #124ca4, #b6fbff);
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #004466;
+            padding: 1em;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/apply">Apply</a>
+        <a href="/status">Check Status</a>
+    </div>
+
+    <div class="container">
+        <h2>Apply for Credit Approval</h2>
+       <form action="/predict" method="POST">
+    <input type="number" name="age" placeholder="Age" required>
+
+    <select name="job" required>
+        <option value="">-- Select Job --</option>
+        <option value="admin">Admin</option>
+        <option value="technician">Technician</option>
+        <option value="blue-collar">Blue-collar</option>
+        <option value="services">Services</option>
+        <option value="management">Management</option>
+        <option value="retired">Retired</option>
+        <option value="entrepreneur">Entrepreneur</option>
+        <option value="unemployed">Unemployed</option>
+        <option value="housemaid">Housemaid</option>
+        <option value="student">Student</option>
+        <option value="self-employed">Self-employed</option>
+        <option value="other">other</option>
+    </select>
+
+    <select name="marital" required>
+        <option value="">-- Select Marital Status --</option>
+        <option value="single">Single</option>
+        <option value="married">Married</option>
+        <option value="divorced">Divorced</option>
+    </select>
+
+    <select name="education" required>
+        <option value="">-- Select Education --</option>
+        <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
+        <option value="tertiary">Tertiary</option>
+        <option value="unknown">Unknown</option>
+    </select>
+
+    <input type="number" step="0.01" name="balance" placeholder="Account Balance" required>
+
+    <select name="housing" required>
+        <option value="">-- Housing Loan --</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <input type="number" step="0.01" name="duration" placeholder="Call Duration (sec)" required>
+
+    <button type="submit">Submit Application</button>
+</form>
+
+    </div>
+</body>
+</html>
